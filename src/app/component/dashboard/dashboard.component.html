@@ -16,10 +16,11 @@
             </div>
             <h4 class="text-primary mt-4">Lists :</h4>
             <div style="overflow-y:auto; height:400px">
-                <div class="m-3">
+
+                <div class="m-3" *ngFor="let task of taskArr">
                     <div class="p-2 shadow">
                         <div class="input-group row ps-3">
-                            <div class="card col-md-10 border-0 text-center">This is To-doS</div>
+                            <div class="card col-md-10 border-0 text-center">{{task.task_name}}</div>
                             <div class="adder">
                                 <button class="btn btn-outline-primary col me-2">e</button>
                                 <div class="btn btn-outline-danger col">x</div>
@@ -27,6 +28,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
         <div class="col"></div>
