@@ -23,7 +23,7 @@
                             <div class="card col-md-10 border-0 text-center">{{task.task_name}}</div>
                             <div class="adder">
                                 <button class="btn btn-outline-primary col me-2">e</button>
-                                <div class="btn btn-outline-danger col">x</div>
+                                <div class="btn btn-outline-danger col" (click)="deleteTask(task)">x</div>
                             </div>
                         </div>
                     </div>
