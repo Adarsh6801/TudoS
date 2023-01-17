@@ -12,12 +12,14 @@ export class DashboardComponent {
   taskArr : Task[]=[];
   
   addTaskValue: String='';
-
+  editTaskValue:String='';
 
   constructor(private crudService : CrudService){
 
   }
   ngOnInit() {
+    this.editTaskValue='';
+    this.addTaskValue='';
     this.taskObj = new Task();
     this.taskArr=[];
     this.getAllTasks()
@@ -39,6 +41,7 @@ export class DashboardComponent {
   })
 }
 editTask(){
+  this.taskObj.task_name=this.editTaskValue
   this.crudService.editTask(this.taskObj).subscribe(res =>{
     this.ngOnInit();
   }, err=>{
@@ -51,5 +54,9 @@ deleteTask(etask: Task){
   },err=>{
     alert("Failed to delete task");
   })
+}
+call(etask: Task){
+  this.taskObj=etask
+  this.editTaskValue=etask.task_name;
 }
 }

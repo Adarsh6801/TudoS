@@ -22,12 +22,37 @@
                         <div class="input-group row ps-3">
                             <div class="card col-md-10 border-0 text-center">{{task.task_name}}</div>
                             <div class="adder">
-                                <button class="btn btn-outline-primary col me-2">e</button>
+                                <button class="btn btn-outline-primary col me-2" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="call(task)">e</button>
                                 <div class="btn btn-outline-danger col" (click)="deleteTask(task)">x</div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
+                <!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Task</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <input type="text" class="form-control" name="task" [(ngModel)]="editTaskValue" placeholder="Enter..." aria-label="Recipient's username" aria-describedby="button-addon2">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-outline-success" type="button" (click)="editTask()">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
             </div>
         </div>
