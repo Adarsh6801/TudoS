@@ -5,7 +5,7 @@
             <div class="col"></div>
             <div clss="col-md-6 bg-white shadow">
                 <div class="card bg-warning">
-                    <h4 class="text-white ps-3 pt-2 pb-2 text-center" >To-doS</h4>
+                    <h4 class="text-white ps-3 pt-2 pb-2 text-center" >Tu-doS</h4>
                 </div>
             
             <div class="shadow border">
@@ -14,7 +14,7 @@
                     <button class="btn btn-outline-success" type="button" (click)="addTask()">Add</button>
                   </div>
             </div>
-            <h4 class="text-primary mt-4">Lists :</h4>
+            <h4 class="text-primary mt-4 text-center">Taks</h4>
             <div style="overflow-y:auto; height:400px">
 
                 <div class="m-3" *ngFor="let task of taskArr">
@@ -42,11 +42,11 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <input type="text" class="form-control" name="task" [(ngModel)]="editTaskValue" placeholder="Enter..." aria-label="Recipient's username" aria-describedby="button-addon2">
+            <input type="text" style='color: black;' class="form-control" name="task" [(ngModel)]="editTaskValue" placeholder="Enter..." aria-label="Recipient's username" aria-describedby="button-addon2">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button class="btn btn-outline-success" type="button" (click)="editTask()">Add</button>
+          <button class="btn btn-outline-success" type="button" data-bs-dismiss="modal" (click)="editTask()">Add</button>
         </div>
       </div>
     </div>
